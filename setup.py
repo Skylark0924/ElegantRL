@@ -14,6 +14,7 @@ setup(
         "matplotlib",
         "gym",
         "gym[Box2D]",
+        "rofunc",
     ],
     description="Lightweight, Efficient and Stable DRL Implementation Using PyTorch",
     classifiers=[
