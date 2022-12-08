@@ -161,7 +161,10 @@ class Evaluator_isaacgym:
             self.used_time = int(time.time() - self.start_time)
             self.recorder.append((self.total_step, r_exp, *log_tuple))  # update recorder
 
-            wandb.log({'reward': r_exp, 'critic_loss': log_tuple[0], 'actor_loss': log_tuple[1]})
+            try:
+                wandb.log({'reward': r_exp, 'critic_loss': log_tuple[0], 'actor_loss': log_tuple[1]})
+            except:
+                pass
 
             self.tensorboard.add_scalar("info/critic_loss_sample", log_tuple[0], self.total_step)
             self.tensorboard.add_scalar("info/actor_obj_sample", -1 * log_tuple[1], self.total_step)

@@ -16,3 +16,6 @@ runs/
 **/.vscode
 # JetBrains folder
 .idea/
+build/
+
+elegantrl.egg-info/
