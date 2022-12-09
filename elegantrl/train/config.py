@@ -199,7 +199,8 @@ def kwargs_filter(func, kwargs: dict):  # [ElegantRL.2021.12.12]
 
 def build_env(env=None, env_func=None, env_args=None):  # [ElegantRL.2021.12.12]
     if env is not None:
-        env = deepcopy(env)
+        # env = deepcopy(env)
+        env = env
     elif env_func.__module__ == 'gym.envs.registration':
         import gym
         gym.logger.set_level(40)  # Block warning

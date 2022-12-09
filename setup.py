@@ -16,6 +16,7 @@ setup(
         "torch",
         "opencv-python",
         "box2d-py",
+        "rofunc"
     ],
     description="Lightweight, Efficient and Stable DRL Implementation Using PyTorch",
     classifiers=[
