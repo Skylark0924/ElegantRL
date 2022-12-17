@@ -96,7 +96,7 @@ class ReplayBuffer:  # for off-policy
             self.buf_next_state[indices],
             self.buf_done[indices]  
         )
-    
+
     def td_error_update(self, td_error):
         self.per_tree.td_error_update(td_error)
 

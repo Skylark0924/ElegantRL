@@ -208,7 +208,10 @@ class Actor(nn.Module):
         self.explore_noise = 0.1  # standard deviation of exploration action noise
 
     def forward(self, state):
-        return self.net(state).tanh()  # action.tanh()
+        try:
+            return self.net(state).tanh()  # action.tanh()
+        except:
+            pass
 
     def get_action(self, state):  # for exploration
         action = self.net(state).tanh()

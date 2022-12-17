@@ -163,7 +163,7 @@ class AgentBase:
         :return: the loss of the network and state.
         """
         with torch.no_grad():
-            reward, done, action, state, next_state = buffer.sample_batch(batch_size)
+            state, action, reward, next_state, done = buffer.sample_batch(batch_size)
             next_a = self.act_target(next_state)
             critic_targets: torch.Tensor = self.cri_target(next_state, next_a)
             (next_q, min_indices) = torch.min(critic_targets, dim=1, keepdim=True)
